@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    overflow-y: hidden;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    height: 10%;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  
+    z-index: 1000;
+}
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 100px;
+}
+.datos-container, .cuotas-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+.datos-container h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+span {
+    font-weight: normal;
+}
+.cuota {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.cuota label {
+    flex: 1;
+}
+.cuota input[type="checkbox"] {
+    margin-left: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
