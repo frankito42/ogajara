@@ -170,6 +170,7 @@
         <div class="modal fade" id="modalClienteNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
+                <form id="addCliente">
                 <div class="modal-header">
                 <h5 class="modal-title text-white" id="exampleModalLabel" style="background: #54b4d3;padding: 1%;border-radius: 5px;">Crear Nuevo Cliente</h5>
                 <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
@@ -178,37 +179,37 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="nombre" name="nombre" class="form-control" />
+                                <input type="text" id="nombre" name="nombre" required class="form-control" />
                                 <label class="form-label" for="nombre">Ingresar nombre</label>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="apellido" class="form-control" />
+                                <input type="text" id="apellido" name="apellido" required class="form-control" />
                                 <label class="form-label" for="apellido">Ingresar apellido</label>
                             </div>
                         </div>
                         <div class="col-12 mt-2">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="cedula" name="cedula" class="form-control" />
+                                <input type="text" id="cedula" name="cedula" required class="form-control" />
                                 <label class="form-label" for="cedula">Ingresar cedula</label>
                             </div>
                         </div>
                         <div class="col-12 mt-2">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="telefono" name="telefono" class="form-control" />
+                                <input type="text" id="telefono" name="telefono" required class="form-control" />
                                 <label class="form-label" for="telefono">Ingresar telefono</label>
                             </div>
                         </div>
                         <div class="col-12 mt-2">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="domicilio" name="domicilio" class="form-control" />
+                                <input type="text" id="domicilio" name="domicilio" required class="form-control" />
                                 <label class="form-label" for="domicilio">Ingresar domicilio</label>
                             </div>
                         </div>
                         <div class="col-8 mt-2">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="text" id="nroCuenta" name="nroCuenta" class="form-control" />
+                                <input type="text" id="nroCuenta" name="nroCuenta" required class="form-control" />
                                 <label class="form-label" for="nroCuenta">Numero de cuenta</label>
                             </div>
                         </div>
@@ -219,9 +220,10 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" data-mdb-ripple-init>Guardar</button>
+                <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Guardar</button>
                 </div>
             </div>
+        </form>
             </div>
         </div>
         <!-- //////////////////////////////////////SECTION MODALES NUEVO CLIENTE FIN////////////////////////////////////////////////// -->

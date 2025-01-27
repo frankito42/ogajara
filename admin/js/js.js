@@ -9,9 +9,25 @@ document.getElementById("search").addEventListener("submit",async (e)=>{
     e.preventDefault()
     await buscarClientes()
 })
+document.getElementById("addCliente").addEventListener("submit",async (e)=>{
+    e.preventDefault()
+    await guardarCliente()
+})
 
 
-
+async function guardarCliente() {
+    let form=new FormData(document.getElementById("addCliente"))
+    await fetch('php/insertCliente.php',{
+        method:"post",
+        body:form,
+    })
+    // Exito
+    .then(response => response.json())  // convertir a json
+    .then(json => {
+        console.log(json)
+        
+    }) 
+}
 
 function sesionOk() {
     if (localStorage.getItem("user")) {
