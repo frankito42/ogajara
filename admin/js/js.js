@@ -1,3 +1,6 @@
+const modalNewCliente = document.getElementById('modalClienteNuevo')
+const modailCliente = new mdb.Modal(modalNewCliente)
+
 document.addEventListener("DOMContentLoaded", function(event) {
     //código a ejecutar cuando existe la certeza de que el DOM está listo para recibir acciones
     sesionOk()
@@ -25,7 +28,8 @@ async function guardarCliente() {
     .then(response => response.json())  // convertir a json
     .then(json => {
         console.log(json)
-        
+        modailCliente.hide()
+        document.getElementById("addCliente").reset()
     }) 
 }
 
