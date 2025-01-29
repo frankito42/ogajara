@@ -69,6 +69,7 @@ function dibujar(params) {
                   <p class="fw-bold mb-1">${params.nombre} ${params.apellido}</p>
                   <p class="text-muted mb-0">Nro cuenta ${params.nroCuenta}</p>
                   <p class="text-muted mb-0">${params.cedula}</p>
+                  <button class="btn btn-success">Ver estado de cuenta</button>
                 </div>
               </div>
         </div>`
