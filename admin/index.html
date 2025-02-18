@@ -50,12 +50,12 @@
                 <li class="nav-item">
                 <a class="nav-link" href="#">Clientes</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Ingresos</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Egresos</a>
-                </li>
+                </li> -->
             </ul>
             <!-- Left links -->
             </div>
@@ -136,6 +136,24 @@
     <button type="button" class="btn btn-info" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modalClienteNuevo">
         Crear nuevo cliente
     </button>
+    <button type="button" class="btn btn-primary" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modalVenta">
+        Nueva venta
+      </button>
+
+
+      <div class="row mt-2">
+        <div class="col-12">
+            <div class="card text-bg-success mb-3">
+                <div class="card-header">Caja de hoy</div>
+                <div class="card-body">
+                  <h5 class="card-title">Cuotas cobradas <span id="cobradoCount"></span></h5>
+                  <h5 class="card-title">Total ingreso $<span id="cobrado"></span></h5>
+                </div>
+              </div>
+        </div>
+      </div>
+
+
 
     <div class="row mt-2">
         <div class="col-12">
@@ -214,7 +232,7 @@
                             </div>
                         </div>
                         <div class="col-4 mt-2">
-                            <button class="btn btn-info">Añadir cuenta</button>
+                            <a onclick="localUser()" class="btn btn-info">Añadir cuenta</a>
                         </div>
                     </div>
                 </div>
@@ -237,11 +255,189 @@
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalVenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="formCasa">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="background: #e1e1e1;padding: 1%;border-radius: 5px;">Nueva venta</h5>
+          <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <label for="">Seleccionar cliente</label>
+                    <select style="width: 100%;padding: 1%;background: #e1e1e1;border: 0;outline: none;border-radius: 5px;" name="cliente" id="selectCliente">
+                        
+                    </select>
+                </div>
+                <div class="col-12 mb-2">
+                    <label for="">Seleccionar mt2</label>
+                    <select style="width: 100%;padding: 1%;background: #e1e1e1;border: 0;outline: none;border-radius: 5px;" name="mt2">
+                        <option value="50">mt2 50</option>
+                        <option value="60">mt2 60</option>
+                        <option value="70">mt2 70</option>
+                        <option value="80">mt2 80</option>
+                        <option value="90">mt2 90</option>
+                        <option value="100">mt2 100</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Guardar</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="estadoCuenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" style="background: #e1e1e1;padding: 1%;border-radius: 5px;" id="exampleModalLabel">Estado de cuenta</h5>
+                <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="compras" class="row">
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalVerCuotas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 style="background: #e1e1e1;padding: 1%;border-radius: 5px;" class="modal-title" id="exampleModalLabel">Cuotas</h5>
+          <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div id="cuotasXd" class="row">
+                
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalTipoPago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="formPagar">
+        <div class="modal-header">
+          <h5 style="background: #e1e1e1;padding: 1%;border-radius: 5px;" class="modal-title" id="exampleModalLabel">Tipo de pago</h5>
+          <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-12 mb-2">
+               <h4 class="text-center"><b style="background: #bbefb1;padding: 1%;border-radius: 5px;">TOTAL $<span id="totalPagar"></span></b></h4>
+            </div>
+            <div class="col-12 mb-2">
+                <label for="">Seleccione un metodo de pago</label>
+                <select style="width: 100%;padding: 1%;background: #e1e1e1;border: 0;outline: none;border-radius: 5px;" name="metodo">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia o trajeta</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Pagar</button>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- //////////////////////////////////////SECTION MODALES XDDDDDDDDDDDDDDDDD///////////////////////////////////////////////// -->
  
     </section>
