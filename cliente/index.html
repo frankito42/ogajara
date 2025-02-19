@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente Che roga pyahu</title>
+    <link rel="stylesheet" href="../mdb5/css/mdb.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <nav style="background: #195991 !important; " class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+              <!-- Toggle button -->
+              <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarCenteredExample"
+                aria-controls="navbarCenteredExample"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+          
+              <!-- Collapsible wrapper -->
+              <div
+                class="collapse navbar-collapse justify-content-center"
+                id="navbarCenteredExample"
+              >
+                <!-- Left links -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a style="color: white;font-weight: bold;" class="nav-link active" aria-current="page" href="#">Hola! <span id="userName"></span></a>
+                  </li>
+                  <!-- Navbar dropdown -->
+                  <li class="nav-item dropdown">
+                    <a
+                      data-mdb-dropdown-init
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      aria-expanded="false"
+                      style="color: white;font-weight: bold;">
+                      Cerrar sesion
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li>
+                        <a class="dropdown-item" href="#">Cerrar sesion</a>
+                      </li>
+                    </ul>
+                  </li>
+                 
+                </ul>
+                <!-- Left links -->
+              </div>
+              <!-- Collapsible wrapper -->
+            </div>
+            <!-- Container wrapper -->
+          </nav>
+    </header>
+    <div class="container">
+        <div class="row mt-2">
+            <div style="display: flex;align-items: center;justify-content: center;" class="col-sm-3">
+                <img style="width: 75%;" src="../Login/logo.png" alt="">
+            </div>
+            <div class="col-sm-9">
+                <div style="background: #ededed;" class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Mis Datos</h5>
+                      <p class="card-text">Nro Cuenta: <span id="cuenta"></span></p>
+                      <p class="card-text">Cedula: <span id="cedula"></span></p>
+                      <p class="card-text">Domicilio: <span id="domicilio"></span></p>
+                      <p class="card-text">Telefono: <span id="telefono"></span></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card text-bg-info mb-3">
+                    <div class="card-header">Estado de cuenta</div>
+                    <div class="card-body">
+                      <h5 class="card-title">MT100</h5>
+                      <p class="card-text">Cuotas pagadas 6/260</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <h4>Historial de pagos</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cuota</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-02-19</td>
+                            <td>1</td>
+                            <td>$750.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="../mdb5/js/mdb.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/js.js"></script>
+</html>
