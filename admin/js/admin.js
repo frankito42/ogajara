@@ -38,8 +38,8 @@ async function cajaMes() {
     .then(response => response.json())  // convertir a json
     .then(json => {
         console.log(json)
-        document.getElementById("mes").innerHTML=json.mes
-        document.getElementById("mesCount").innerHTML=json.contador
+        document.getElementById("mes").innerHTML=(json)?json.mes:""
+        document.getElementById("mesCount").innerHTML=(json)?json.contador:0
         document.getElementById("mesCobrado").innerHTML=formatWithDots((json.total==null)?0:json.total)
     }) 
 }
