@@ -116,6 +116,7 @@ function dibujarPagosPendientes(params) {
             <div class="card border border-info shadow-0 mb-3">
                                 <div class="card-body">
                                     <h4 style="display: flex;justify-content: space-between;background: #54b4d3;border-radius: 5px;" class="card-title text-center p-1 text-white"><span>${element.fechaPago} </span><span>Cuota N°${element.nroCuota} </span></h4>
+                                    <p class="card-text">Operador: ${element.user}</p>
                                     <p class="card-text">Metodo de pago: ${element.metodoPago}</p>
                                     <p class="card-text">Total: $${formatWithDots(element.total)}</p>
                                     <p class="card-text">Vencimiento: ${element.vencimiento}</p>
