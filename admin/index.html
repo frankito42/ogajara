@@ -146,7 +146,7 @@
             <div class="card text-bg-success mb-3">
                 <div class="card-header">Caja de hoy</div>
                 <div class="card-body">
-                  <h5 class="card-title">Cuotas cobradas <span id="cobradoCount"></span></h5>
+                  <h5 class="card-title">Cuotas abonadas <span id="cobradoCount"></span></h5>
                   <h5 class="card-title">Total ingreso $<span id="cobrado"></span></h5>
                 </div>
               </div>
@@ -157,6 +157,9 @@
 
     <div class="row mt-2">
         <div class="col-12">
+            <h4>Pagar Cuotas</h4>
+        </div>
+        <div class="col-12 mt-2">
            <form id="search">
                 <div class="input-group rounded">
                     <input type="search" name="search" class="form-control rounded" placeholder="Buscar cliente" aria-label="Search" aria-describedby="search-addon" />
@@ -167,7 +170,7 @@
            </form>
         </div>
     </div>
-
+    
     <div id="listarClientes" class="row mt-2">
         
         <div class="col-12 mb-2">
@@ -223,6 +226,12 @@
                             <div class="form-outline" data-mdb-input-init>
                                 <input type="text" id="domicilio" name="domicilio" required class="form-control" />
                                 <label class="form-label" for="domicilio">Ingresar domicilio</label>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input type="email" id="email" name="email" required class="form-control" />
+                                <label class="form-label" for="email">Ingresar email</label>
                             </div>
                         </div>
                         <div class="col-8 mt-2">
