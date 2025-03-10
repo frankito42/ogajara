@@ -38,8 +38,13 @@ async function cajaMes() {
     .then(response => response.json())  // convertir a json
     .then(json => {
         console.log(json)
+<<<<<<< HEAD
         document.getElementById("mes").innerHTML=json.mes
         document.getElementById("mesCount").innerHTML=json.contador
+=======
+        document.getElementById("mes").innerHTML=(json)?json.mes:""
+        document.getElementById("mesCount").innerHTML=(json)?json.contador:0
+>>>>>>> 5a6d436c6dd7c9817970864d911e4ac518803901
         document.getElementById("mesCobrado").innerHTML=formatWithDots((json.total==null)?0:json.total)
     }) 
 }
@@ -116,6 +121,10 @@ function dibujarPagosPendientes(params) {
             <div class="card border border-info shadow-0 mb-3">
                                 <div class="card-body">
                                     <h4 style="display: flex;justify-content: space-between;background: #54b4d3;border-radius: 5px;" class="card-title text-center p-1 text-white"><span>${element.fechaPago} </span><span>Cuota N°${element.nroCuota} </span></h4>
+<<<<<<< HEAD
+=======
+                                    <p class="card-text">Operador: ${element.user}</p>
+>>>>>>> 5a6d436c6dd7c9817970864d911e4ac518803901
                                     <p class="card-text">Metodo de pago: ${element.metodoPago}</p>
                                     <p class="card-text">Total: $${formatWithDots(element.total)}</p>
                                     <p class="card-text">Vencimiento: ${element.vencimiento}</p>
