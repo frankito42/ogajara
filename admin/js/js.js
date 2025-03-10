@@ -165,6 +165,38 @@ function dibujar(params) {
         }
         document.getElementById("listarClientes").innerHTML=card
 }
+
+async function descargarContrato(id,idE) {
+    const formData = new FormData();
+
+            formData.append('id', id);
+            formData.append('idE', idE);
+
+            fetch('php/process_word.php', {
+                method: 'POST',
+                body:formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.filePath) {
+                    // Crear un enlace para descargar el archivo
+                    const link = document.createElement('a');
+                    link.href = "php/uploads/cm.docx";
+                    link.download = "CONTRATO"+data.filePath+".docx";
+                    link.click();
+                } else {
+                    alert('Ocurrió un error al procesar el archivo.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema con la carga del archivo.');
+            });
+        
+}
+
+
+
 function dibujarOption(params) {
     let option=``
     params.forEach(element => {
@@ -199,6 +231,8 @@ function dibujarEstadoDeCuenta(params) {
                     <p class="card-text">Cuotas pagadas ${element.pagado}</p>
                     <p class="card-text">Estado ${(element.estado==0)?"<span style='border-radius: 5px;background: #fdbcbc;padding: 1%;'>Pendiente</span>":"<span style='border-radius: 5px;background:rgb(203, 253, 188);padding: 1%;'>Pendiente</span>"}</p>
                     <button onclick="verCuotas(${element.id})" class="btn btn-success btn-block">Ver</button>
+                    <button onclick="descargarContrato(${element.idCliente},${element.id})" class="btn btn-success btn-block mt-2">Descargar Contrato</button>
+
                 </div>
                 </div>
             </div>`
