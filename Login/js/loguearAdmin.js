@@ -13,7 +13,11 @@ document.getElementById("formInicioSesion").addEventListener("submit",async (e)=
             alert("Ops ocurrio un error")
         }else{
             localStorage.setItem("user", JSON.stringify(data));
-            location.href="../admin/index.html"
+            if(data.privilegios==3){
+                location.href="../admin/admin5.html"
+            }else{
+                location.href="../admin/index.html"
+            }
 
         }
     });
