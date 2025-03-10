@@ -1,7 +1,7 @@
 <?php
 require "../../conn/conn.php";
 $sql="INSERT INTO `estadocuenta`(`idCliente`, `mt2`, `cuotas`, `estado`) VALUES 
-(:idCliente,:mt2,36,'pendiente')";
+(:idCliente,:mt2,216,'pendiente')";
 $res=$conn->prepare($sql);
 $res->bindParam(":idCliente",$_POST['cliente']);
 $res->bindParam(":mt2",$_POST['mt2']);
@@ -10,7 +10,7 @@ $res->execute();
 
 $idCuenta=$conn->lastInsertId();
 
-for ($i=1; $i <=36 ; $i++) { 
+for ($i=1; $i <=216 ; $i++) { 
     if ($_POST['mt2']=='50') {
         $dueDate = date('Y-m-d', strtotime("+$i month"));
         $sql="INSERT INTO `estadocuotas`(`idEstadoCuenta`, `nroCuota`, `total`, `estado`,vencimiento) VALUES 

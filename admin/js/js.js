@@ -12,8 +12,13 @@ const mTipoPago = new mdb.Modal(modalTipoPago)
 document.addEventListener("DOMContentLoaded", async function(event) {
     //código a ejecutar cuando existe la certeza de que el DOM está listo para recibir acciones
     sesionOk()
+    if(JSON.parse(localStorage.getItem("user")).privilegios==2){
+        await cajaHoy()    
+    }else{
+        document.getElementById("cajaHoyXd").style.display="none"
+    }
     await listarClientes()
-    await cajaHoy()
+    
 });
 document.getElementById("cerrarSesion").addEventListener("click",()=>{
     cerrarSesion()
@@ -265,17 +270,22 @@ async function traerCuotas(id) {
 
 function dibujarCuotas(params) {
     let tr=``
+    let ver=``
     params.forEach(element => {
+        if(JSON.parse(localStorage.getItem("user")).privilegios==2){
+            ver=`<button style="display:${(element.estado==1)?"none":""};" id="btnOcultar${element.id}" type="button" onclick="abriModalPagar(${element.id},${element.total})" class="btn btn-success btn-block" data-mdb-ripple-init>Pagar</button>`
+        }
         tr+=`<div class="col-12 mb-2">
                 <div style="background:${(element.estado==1)?"rgb(229, 255, 229)":""};" id="cardCuota${element.id}" class="card">
                 <div class="card-body">
                     <h5 class="card-title"><b>Nro cuota ${element.nroCuota}</b></h5>
                     <p class="card-text">Vence: ${element.vencimiento} $${formatWithDots(element.total)}</p>
-                    <button style="display:${(element.estado==1)?"none":""};" id="btnOcultar${element.id}" type="button" onclick="abriModalPagar(${element.id},${element.total})" class="btn btn-success btn-block" data-mdb-ripple-init>Pagar</button>
+                    ${ver}
                     ${(element.estado==1)?`<h3 class="text-center" style="background: #14a44d;padding: 1%;border-radius: 5px;color: white;">Fecha de pago ${element.fechaPago}</h3>`:""}
                 </div>
                 </div>
             </div>`
+            ver=``
     });
         document.getElementById("cuotasXd").innerHTML=tr
 }

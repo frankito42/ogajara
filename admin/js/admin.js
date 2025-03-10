@@ -88,7 +88,8 @@ function dibujarPagosVerificacion(params) {
                 <div class="card-body">
                   <h5 class="card-title">pago: ${element.cuotas}</h5>
                   <h5 class="card-title">Total: $${formatWithDots(element.pagado)}</h5>
-                  <button onclick="abrirModalEstadoCuenta(${element.id})" class="btn btn-secondary btn-block">Verificar</button>
+                  <h5 class="card-title">User: ${element.user}</h5>
+                  <button onclick="abrirModalEstadoCuenta(${element.id},${element.idUser})" class="btn btn-secondary btn-block">Verificar</button>
                 </div>
             </div>
         </div>`
@@ -119,6 +120,7 @@ function dibujarPagosPendientes(params) {
                                     <p class="card-text">Metodo de pago: ${element.metodoPago}</p>
                                     <p class="card-text">Total: $${formatWithDots(element.total)}</p>
                                     <p class="card-text">Vencimiento: ${element.vencimiento}</p>
+                                    <p class="card-text">User: ${element.user}</p>
                                     <button type="button" onclick="abrirModalAprobarPago(${element.id})" class="btn btn-success btn-block" data-mdb-ripple-init>Aprobar</button>
                                 </div>
                             </div>
@@ -127,7 +129,8 @@ function dibujarPagosPendientes(params) {
         document.getElementById("Aaprobar").innerHTML=aAprobar
 }
 
-async function abrirModalEstadoCuenta(id) {
+async function abrirModalEstadoCuenta(id,idC) {
+    localStorage.setItem("vendedor",idC)
     localStorage.setItem("ec",id)
     mAprobar.show()
     await traerEstadoDeCuenta()
@@ -139,7 +142,7 @@ async function abrirModalAprobarPago(id) {
 }
 async function traerEstadoDeCuenta() {
     let id=localStorage.getItem("ec")
-    await fetch('php/aprobar.php?id='+id)
+    await fetch('php/aprobar.php?id='+id+"&idUser="+localStorage.getItem("vendedor"))
     // Exito
     .then(response => response.json())  // convertir a json
     .then(json => {
@@ -155,6 +158,7 @@ async function aprobarCuota() {
     .then(async json => {
         console.log(json)
         mAprobarPago.hide()
+        
         await abrirModalEstadoCuenta(localStorage.getItem("ec"))
         await cajaPendientes()
         await cajaHoy()

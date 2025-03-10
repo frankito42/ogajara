@@ -2,6 +2,9 @@
 require '../vendor/autoload.php';
 require "../../conn/conn.php";
 use PhpOffice\PhpWord\TemplateProcessor;
+if (!class_exists('PhpOffice\PhpWord\TemplateProcessor')) {
+    die('TemplateProcessor no está disponible');
+}
 function separarFecha($fecha) {
     $timestamp = strtotime($fecha);  // Convierte la fecha en un timestamp
 
